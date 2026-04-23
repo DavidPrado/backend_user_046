@@ -14,9 +14,9 @@ spring:
 
   # Banco de Dados Tradicional (JDBC) - Usado pelo Flyway
   datasource:
-    url: jdbc:postgresql://localhost:5435/etec046_db
-    username: etec046_root
-    password: "etec046@!2025"
+    url: jdbc:postgresql://localhost:5435/
+    username:
+    password:
     driver-class-name: org.postgresql.Driver
 
   # Migra��es com Flyway
@@ -35,27 +35,27 @@ spring:
     admin:
       client:
         url: http://localhost:9090
-        username: admin@etec.sp.gov.com.br
-        password: "Etec046@!"
+        username:
+        password:
         instance:
           metadata:
             user:
-              name: monitoramento@etec.sp.gov.br
-              password: "Etec046@!"
+              name:
+              password:
 
   # Seguran�a Interna (Spring Security)
   security:
     user:
-      name: admin-monitor
-      password: "{bcrypt}$2a$10$8.06S9.7p9.Y13SyA.iSreV8.A6nS2vDscSowI3v98WvA1/pSjY6."
-      roles: ADMIN
+      name:
+      password:
+      roles:
 
   # Configura��es de E-mail (SMTP)
   mail:
     host: smtp.gmail.com
     port: 587
-    username: carmeliocorreiajunioretec@gmail.com
-    password: "latd rhnj yltu tqwn" # Senha de App (16 d�gitos)
+    username:
+    password:
     properties:
       mail:
         smtp:
@@ -70,8 +70,8 @@ spring:
 
 # Configura��es Customizadas (JWT)
 jwt:
-  secret: kHbjdX0iUYFIyKc9FULjbOgtA5mwr8CfcfeLNCxuxyGFBrfZsuRAKqCwXlrUUsYO
-  expiration: 32400000
+  secret:
+  expiration:
 
 management:
   endpoints:
