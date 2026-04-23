@@ -1,0 +1,1 @@
+ALTER TABLE system_users ADD COLUMN mustChangePassword BOOLEAN DEFAULT FALSE;

@@ -1,0 +1,109 @@
+2026-02-20T08:45:11.255-03:00  INFO 11928 --- [Sistema-Usuarios-ETEC] [main] com.baser_users.BaserUsersApplication    : Starting BaserUsersApplication using Java 21.0.9 with PID 11928 (C:\Projeto Etec\base-usersv1\baser-users\baser-users\target\classes started by David Stefani Prado in C:\Projeto Etec\base-usersv1\baser-users)
+2026-02-20T08:45:11.283-03:00  INFO 11928 --- [Sistema-Usuarios-ETEC] [main] com.baser_users.BaserUsersApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-02-20T08:45:15.499-03:00  INFO 11928 --- [Sistema-Usuarios-ETEC] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2026-02-20T08:45:16.134-03:00  INFO 11928 --- [Sistema-Usuarios-ETEC] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 615 ms. Found 7 R2DBC repository interfaces.
+2026-02-20T08:45:23.051-03:00  INFO 11928 --- [Sistema-Usuarios-ETEC] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 5 endpoints beneath base path '/actuator'
+2026-02-20T08:45:25.104-03:00  INFO 11928 --- [Sistema-Usuarios-ETEC] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5435/etec046_db (PostgreSQL 16.10)
+2026-02-20T08:45:25.530-03:00  INFO 11928 --- [Sistema-Usuarios-ETEC] [main] o.f.core.internal.command.DbValidate     : Successfully validated 21 migrations (execution time 00:00.305s)
+2026-02-20T08:45:25.600-03:00  INFO 11928 --- [Sistema-Usuarios-ETEC] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 20260212133930
+2026-02-20T08:45:25.608-03:00  INFO 11928 --- [Sistema-Usuarios-ETEC] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-02-20T08:45:26.068-03:00  INFO 11928 --- [Sistema-Usuarios-ETEC] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-02-20T08:45:26.097-03:00  INFO 11928 --- [Sistema-Usuarios-ETEC] [main] com.baser_users.BaserUsersApplication    : Started BaserUsersApplication in 16.479 seconds (process running for 24.489)
+2026-02-20T08:45:26.646-03:00  WARN 11928 --- [Sistema-Usuarios-ETEC] [registrationTask1] .c.b.a.c.r.DefaultApplicationRegistrator : Failed to register application as Application(name=Sistema-Usuarios-ETEC, managementUrl=http://192.168.137.14:8080/actuator, healthUrl=http://192.168.137.14:8080/actuator/health, serviceUrl=http://192.168.137.14:8080/) at spring-boot-admin ([http://localhost:9090/instances]): Connection refused: getsockopt: localhost/127.0.0.1:9090. Further attempts are logged on DEBUG level
+
+org.springframework.web.reactive.function.client.WebClientRequestException: Connection refused: getsockopt: localhost/127.0.0.1:9090
+	at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137) ~[spring-webflux-6.2.14.jar:6.2.14]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to POST http://localhost:9090/instances [DefaultWebClient]
+Original Stack Trace:
+		at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137) ~[spring-webflux-6.2.14.jar:6.2.14]
+		at reactor.core.publisher.MonoErrorSupplied.subscribe(MonoErrorSupplied.java:55) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onError(MonoNext.java:93) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyMain.onError(MonoFlatMapMany.java:205) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.whenError(FluxRetryWhen.java:229) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenOtherSubscriber.onError(FluxRetryWhen.java:279) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.maybeOnError(FluxConcatMapNoPrefetch.java:327) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:212) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.SinkManyEmitterProcessor.drain(SinkManyEmitterProcessor.java:476) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.SinkManyEmitterProcessor$EmitterInner.drainParent(SinkManyEmitterProcessor.java:620) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxPublish$PubSubInner.request(FluxPublish.java:874) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:337) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.Operators$DeferredSubscription.request(Operators.java:1742) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.onError(FluxRetryWhen.java:196) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.netty.http.client.HttpClientConnect$MonoHttpConnect$ClientTransportSubscriber.onError(HttpClientConnect.java:333) ~[reactor-netty-http-1.2.12.jar:1.2.12]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$DisposableAcquire.onError(DefaultPooledConnectionProvider.java:174) ~[reactor-netty-core-1.2.12.jar:1.2.12]
+		at reactor.netty.internal.shaded.reactor.pool.AbstractPool$Borrower.fail(AbstractPool.java:479) ~[reactor-netty-core-1.2.12.jar:1.2.12]
+		at reactor.netty.internal.shaded.reactor.pool.SimpleDequePool.lambda$drainLoop$9(SimpleDequePool.java:443) ~[reactor-netty-core-1.2.12.jar:1.2.12]
+		at reactor.core.publisher.FluxDoOnEach$DoOnEachSubscriber.onError(FluxDoOnEach.java:186) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$PooledConnectionAllocator$PooledConnectionInitializer.onError(DefaultPooledConnectionProvider.java:593) ~[reactor-netty-core-1.2.12.jar:1.2.12]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondError(MonoFlatMap.java:241) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.MonoFlatMap$FlatMapInner.onError(MonoFlatMap.java:315) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.tryFailure(TransportConnector.java:600) ~[reactor-netty-core-1.2.12.jar:1.2.12]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.setFailure(TransportConnector.java:546) ~[reactor-netty-core-1.2.12.jar:1.2.12]
+		at reactor.netty.transport.TransportConnector.lambda$doConnect$7(TransportConnector.java:262) ~[reactor-netty-core-1.2.12.jar:1.2.12]
+		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:604) ~[netty-common-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:597) ~[netty-common-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:573) ~[netty-common-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:506) ~[netty-common-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:650) ~[netty-common-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:643) ~[netty-common-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:132) ~[netty-common-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:326) ~[netty-transport-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:342) ~[netty-transport-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:784) ~[netty-transport-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.128.Final.jar:4.1.128.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.128.Final.jar:4.1.128.Final]
+		at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:104) ~[reactor-core-3.7.13.jar:3.7.13]
+		at reactor.core.publisher.Mono.block(Mono.java:1779) ~[reactor-core-3.7.13.jar:3.7.13]
+		at de.codecentric.boot.admin.client.registration.ReactiveRegistrationClient.register(ReactiveRegistrationClient.java:51) ~[spring-boot-admin-client-3.5.6.jar:3.5.6]
+		at de.codecentric.boot.admin.client.registration.DefaultApplicationRegistrator.register(DefaultApplicationRegistrator.java:80) ~[spring-boot-admin-client-3.5.6.jar:3.5.6]
+		at de.codecentric.boot.admin.client.registration.DefaultApplicationRegistrator.register(DefaultApplicationRegistrator.java:61) ~[spring-boot-admin-client-3.5.6.jar:3.5.6]
+		at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-6.2.14.jar:6.2.14]
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+		at java.base/java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:358) ~[na:na]
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java) ~[na:na]
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+		at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: getsockopt: localhost/127.0.0.1:9090
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:690) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:973) ~[na:na]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:336) ~[netty-transport-4.1.128.Final.jar:4.1.128.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:339) ~[netty-transport-4.1.128.Final.jar:4.1.128.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:784) ~[netty-transport-4.1.128.Final.jar:4.1.128.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.128.Final.jar:4.1.128.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.128.Final.jar:4.1.128.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.128.Final.jar:4.1.128.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.128.Final.jar:4.1.128.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.128.Final.jar:4.1.128.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.128.Final.jar:4.1.128.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+

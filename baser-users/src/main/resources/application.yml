@@ -1,0 +1,103 @@
+spring:
+  application:
+    name: Sistema-Usuarios-ETEC
+
+  # Banco de Dados Reativo (R2DBC)
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5435/etec046_db
+    username: etec046_root
+    password: "etec046@!2025"
+    pool:
+      initial-size: 5
+      max-size: 20
+      max-idle-time: 30m
+
+  # Banco de Dados Tradicional (JDBC) - Usado pelo Flyway
+  datasource:
+    url: jdbc:postgresql://localhost:5435/etec046_db
+    username: etec046_root
+    password: "etec046@!2025"
+    driver-class-name: org.postgresql.Driver
+
+  # Migra��es com Flyway
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    clean-disabled: false
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    url: ${spring.datasource.url}
+    repair-on-migrate: true
+    #out-of-order: true
+
+  # Configura��es do Spring Boot Admin Client
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090
+        username: admin@etec.sp.gov.com.br
+        password: "Etec046@!"
+        instance:
+          metadata:
+            user:
+              name: monitoramento@etec.sp.gov.br
+              password: "Etec046@!"
+
+  # Seguran�a Interna (Spring Security)
+  security:
+    user:
+      name: admin-monitor
+      password: "{bcrypt}$2a$10$8.06S9.7p9.Y13SyA.iSreV8.A6nS2vDscSowI3v98WvA1/pSjY6."
+      roles: ADMIN
+
+  # Configura��es de E-mail (SMTP)
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: carmeliocorreiajunioretec@gmail.com
+    password: "latd rhnj yltu tqwn" # Senha de App (16 d�gitos)
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+
+# Configura��es Customizadas (JWT)
+jwt:
+  secret: kHbjdX0iUYFIyKc9FULjbOgtA5mwr8CfcfeLNCxuxyGFBrfZsuRAKqCwXlrUUsYO
+  expiration: 32400000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # Exp�e os endpoints necess�rios.
+        # Em prod, por seguran�a, voc� pode listar apenas o que usa:
+        include: "health,info,loggers,logfile,metrics"
+  endpoint:
+    loggers:
+      enabled: true
+    health:
+      show-details: always
+
+# Informa��es da Aplica��o
+info:
+  app:
+    name: Sistema de Usu�rios ETEC
+    description: Microservi�o de gerenciamento de usu�rios com WebFlux
+    version: 1.0.0
+
+# Caminho para o arquivo de log (O Actuator precisa disso para exibir o log no Admin)
+logging:
+  file:
+    name: logs/app-usuarios.log
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 7

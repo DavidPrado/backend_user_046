@@ -1,0 +1,87 @@
+server:
+  port: 28080
+
+spring:
+  application:
+    name: Sistema-Usuarios-ETEC-DEV
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5435/etec046_db
+    username: etec046_root
+    password: "etec046@!2025"
+    pool:
+      initial-size: 2
+      max-size: 10
+
+  datasource:
+    url: jdbc:postgresql://localhost:5435/etec046_db
+    username: etec046_root
+    password: "etec046@!2025"
+    driver-class-name: org.postgresql.Driver
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    clean-disabled: false
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    url: ${spring.datasource.url}
+    repair-on-migrate: true
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:29090
+        username: admin@etec.sp.gov.com.br
+        password: "Etec046@!"
+        instance:
+          service-base-url: http://localhost:${server.port}
+          metadata:
+            user:
+              name: monitoramento@etec.sp.gov.br
+              password: "Etec046@!"
+
+  security:
+    user:
+      name: admin-monitor
+      password: "{bcrypt}$2a$10$8.06S9.7p9.Y13SyA.iSreV8.A6nS2vDscSowI3v98WvA1/pSjY6."
+      roles: ADMIN
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: carmeliocorreiajunioretec@gmail.com
+    password: "latd rhnj yltu tqwn"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  secret: kHbjdX0iUYFIyKc9FULjbOgtA5mwr8CfcfeLNCxuxyGFBrfZsuRAKqCwXlrUUsYO
+  expiration: 32400000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+info:
+  app:
+    name: Sistema de Usuários ETEC (AMBIENTE DEV)
+    version: 1.0.0-SNAPSHOT
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.data.r2dbc: DEBUG
+    io.r2dbc.postgresql: DEBUG
+  file:
+    name: logs/app-usuarios-dev.log
