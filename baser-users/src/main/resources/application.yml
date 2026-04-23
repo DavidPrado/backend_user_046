@@ -4,9 +4,9 @@ spring:
 
   # Banco de Dados Reativo (R2DBC)
   r2dbc:
-    url: r2dbc:postgresql://localhost:5435/etec046_db
-    username: etec046_root
-    password: "etec046@!2025"
+    url: r2dbc:postgresql://localhost:5435/
+    username:
+    password:
     pool:
       initial-size: 5
       max-size: 20
