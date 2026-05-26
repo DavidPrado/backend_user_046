@@ -1,0 +1,1 @@
+ALTER TABLE accommodation_payment ADD COLUMN amount_paid numeric(12,2);

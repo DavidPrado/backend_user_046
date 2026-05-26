@@ -4,13 +4,14 @@ CREATE VIEW v_accommodation_student_details AS
 SELECT
     t.id AS id,
     a.room_number AS room_number,
-    a.building_block AS building_block,
-    a.max_capacity AS max_capacity,
-    a.gender_type AS gender_type,
+    a.building_block as building_block,
+    a.max_capacity as max_capacity,
+    a.gender_type as gender_type,
     p."name" AS student_name,
     t.entry_date AS entry_date,
     t.exit_date AS exit_date,
-    a.status AS status_accommodation
+    a.status AS status_accommodation,
+    t.created_at
 FROM accommodation_student t
 INNER JOIN accommodation a ON (a.id = t.id_accommodation)
 INNER JOIN student s ON (s.id = t.id_student)

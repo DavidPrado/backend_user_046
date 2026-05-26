@@ -1,0 +1,1 @@
+ALTER TABLE accommodation_payment ADD COLUMN id_accommodation UUID;

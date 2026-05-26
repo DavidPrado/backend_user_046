@@ -1,0 +1,1 @@
+ALTER TABLE accommodation_payment ADD COLUMN justification varchar(255);
